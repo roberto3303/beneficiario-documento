@@ -1,4 +1,4 @@
-package br.com.petz.cliente_pet.handler;
+package br.com.wakanda.beneficiario_documento.handler;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AccessLevel;
