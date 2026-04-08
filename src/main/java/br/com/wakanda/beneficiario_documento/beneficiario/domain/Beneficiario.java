@@ -1,5 +1,6 @@
 package br.com.wakanda.beneficiario_documento.beneficiario.domain;
 
+import br.com.wakanda.beneficiario_documento.beneficiario.application.api.BeneficiarioRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -30,14 +31,11 @@ public class Beneficiario {
     private LocalDateTime dataInclusao;
     private LocalDateTime dataAtualizacao;
 
-    public Beneficiario(UUID idBeneficiario, String nomeCompleto,
-                        String telefone, LocalDate dataNascimento,
-                        LocalDateTime dataInclusao, LocalDateTime dataAtualizacao) {
-        this.idBeneficiario = idBeneficiario;
-        this.nomeCompleto = nomeCompleto;
-        this.telefone = telefone;
-        this.dataNascimento = dataNascimento;
+
+    public Beneficiario(BeneficiarioRequest beneficiarioRequest) {
+        this.nomeCompleto = beneficiarioRequest.getNomeCompleto();
+        this.telefone = beneficiarioRequest.getTelefone();
+        this.dataNascimento = beneficiarioRequest.getDataNascimento();
         this.dataInclusao = LocalDateTime.now();
-        this.dataAtualizacao = dataAtualizacao;
     }
 }

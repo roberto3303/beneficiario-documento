@@ -13,9 +13,9 @@ public class BeneficiarioController implements BeneficiarioAPI {
     private final BeneficiarioService beneficiarioService;
 
     @Override
-    public BeneficarioResponse postBeneficiario(BeneficiarioRequest beneficiarioRequest) {
+    public BeneficiarioResponse postBeneficiario(BeneficiarioRequest beneficiarioRequest) {
        log.info("[inicia] BeneficiarioController - postBeneficiario");
-       BeneficarioResponse  beneficiarioCriado = beneficiarioService.criaBeneficiario(beneficiarioRequest);
+       BeneficiarioResponse beneficiarioCriado = beneficiarioService.criaBeneficiario(beneficiarioRequest);
        log.info("[finaliza] BeneficiarioController - postBeneficiario");
         return beneficiarioCriado;
     }

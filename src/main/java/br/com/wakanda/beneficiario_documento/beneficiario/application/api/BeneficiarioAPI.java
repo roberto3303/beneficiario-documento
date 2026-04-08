@@ -11,5 +11,5 @@ public interface BeneficiarioAPI {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    BeneficarioResponse postBeneficiario(@Valid @RequestBody BeneficiarioRequest beneficiarioRequest);
+    BeneficiarioResponse postBeneficiario(@Valid @RequestBody BeneficiarioRequest beneficiarioRequest);
 }
