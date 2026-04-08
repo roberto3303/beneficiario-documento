@@ -1,0 +1,14 @@
+package br.com.wakanda.beneficiario_documento.beneficiario.application.api;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+
+@RestController
+@RequestMapping("/v1/beneficiario")
+public interface BeneficiarioAPI {
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    BeneficarioResponse postBeneficiario(@RequestBody BeneficiarioRequest beneficiarioRequest);
+}
