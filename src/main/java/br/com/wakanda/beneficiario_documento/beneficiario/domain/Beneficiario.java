@@ -1,7 +1,6 @@
 package br.com.wakanda.beneficiario_documento.beneficiario.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
@@ -17,6 +16,8 @@ import java.util.UUID;
 @Entity
 public class Beneficiario {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "uuid", updatable = false, nullable = false)
     private UUID idBeneficiario;
     @NotBlank
     private String nomeCompleto;
