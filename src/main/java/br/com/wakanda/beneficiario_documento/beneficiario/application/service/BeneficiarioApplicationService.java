@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Log4j2
 @RequiredArgsConstructor
 public class BeneficiarioApplicationService implements BeneficiarioService {
+
     private final BeneficiarioRepository beneficiarioRepository;
 
     @Override
