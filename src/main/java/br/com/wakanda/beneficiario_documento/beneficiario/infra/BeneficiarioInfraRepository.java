@@ -26,7 +26,8 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
     @Override
     public List<Beneficiario> buscaTodosBeneficiarios() {
         log.info("[inicia] BeneficiarioInfraRepository - buscaTodosBeneficiarios");
+        List<Beneficiario> todosBeneficiarios = beneficiarioSpringDataJpaRepository.findAll();
         log.info("[finaliza] BeneficiarioInfraRepository - buscaTodosBeneficiarios");
-        return List.of();
+        return todosBeneficiarios;
     }
 }
