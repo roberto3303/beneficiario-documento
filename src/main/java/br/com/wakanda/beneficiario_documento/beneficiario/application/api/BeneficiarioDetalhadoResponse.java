@@ -19,5 +19,4 @@ public class BeneficiarioDetalhadoResponse {
 
 
     private LocalDateTime dataInclusao;
-    private LocalDateTime dataAtualizacao;
 }
