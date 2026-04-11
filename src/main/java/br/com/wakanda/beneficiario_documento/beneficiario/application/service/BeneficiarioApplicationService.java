@@ -1,5 +1,6 @@
 package br.com.wakanda.beneficiario_documento.beneficiario.application.service;
 
+import br.com.wakanda.beneficiario_documento.beneficiario.application.api.BeneficiarioDetalhadoResponse;
 import br.com.wakanda.beneficiario_documento.beneficiario.application.api.BeneficiarioListResponse;
 import br.com.wakanda.beneficiario_documento.beneficiario.application.api.BeneficiarioResponse;
 import br.com.wakanda.beneficiario_documento.beneficiario.application.api.BeneficiarioRequest;
@@ -10,6 +11,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Log4j2
@@ -33,5 +35,12 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
         List<Beneficiario> beneficiarios = beneficiarioRepository.buscaTodosBeneficiarios();
         log.info("[finaliza] BeneficiarioApplicationService - buscaTodosBeneficiarios");
         return BeneficiarioListResponse.converte(beneficiarios);
+    }
+
+    @Override
+    public BeneficiarioDetalhadoResponse buscaBeneficiarioAtravesId(UUID idBeneficiario) {
+        log.info("[inicia] BeneficiarioApplicationService - buscaBeneficiarioAtravesId");
+        log.info("[finaliza] BeneficiarioApplicationService - buscaBeneficiarioAtravesId");
+        return null;
     }
 }
