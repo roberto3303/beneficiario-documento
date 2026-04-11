@@ -2,7 +2,6 @@ package br.com.wakanda.beneficiario_documento.beneficiario.application.api;
 
 import br.com.wakanda.beneficiario_documento.beneficiario.domain.Beneficiario;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import jakarta.persistence.Entity;
 import lombok.Value;
 
 import java.time.LocalDate;
@@ -19,14 +18,12 @@ public class BeneficiarioListResponse {
     private String telefone;
     private LocalDate dataNascimento;
 
-    private LocalDateTime dataInclusao;
 
     public BeneficiarioListResponse(Beneficiario beneficiario) {
         this.idBeneficiario = beneficiario.getIdBeneficiario();
         this.nomeCompleto = beneficiario.getNomeCompleto();
         this.telefone = beneficiario.getTelefone();
         this.dataNascimento = beneficiario.getDataNascimento();
-        this.dataInclusao = beneficiario.getDataInclusao();
     }
 
     public static List<BeneficiarioListResponse> converte(List<Beneficiario> beneficiarios) {

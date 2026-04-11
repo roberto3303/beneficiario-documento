@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @RestController
@@ -18,4 +19,8 @@ public interface BeneficiarioAPI {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     List<BeneficiarioListResponse> getTodosBeneficiarios();
+
+    @GetMapping("/{idBeneficiario}")
+    @ResponseStatus(HttpStatus.OK)
+    BeneficiarioDetalhadoResponse getBeneficiarioAtravesId(@PathVariable   UUID idBeneficiario);
 }
