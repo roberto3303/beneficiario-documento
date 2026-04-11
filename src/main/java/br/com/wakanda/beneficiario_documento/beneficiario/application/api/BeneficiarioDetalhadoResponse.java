@@ -1,6 +1,7 @@
 package br.com.wakanda.beneficiario_documento.beneficiario.application.api;
 
 
+import br.com.wakanda.beneficiario_documento.beneficiario.domain.Beneficiario;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Value;
 
@@ -19,4 +20,14 @@ public class BeneficiarioDetalhadoResponse {
 
 
     private LocalDateTime dataInclusao;
+
+    public BeneficiarioDetalhadoResponse(Beneficiario beneficiario) {
+        this.idBeneficiario = beneficiario.getIdBeneficiario();
+        this.nomeCompleto = beneficiario.getNomeCompleto();
+        this.telefone = beneficiario.getTelefone();
+        this.dataNascimento = beneficiario.getDataNascimento();
+        this.dataInclusao = beneficiario.getDataInclusao();
+
+    }
+
 }
