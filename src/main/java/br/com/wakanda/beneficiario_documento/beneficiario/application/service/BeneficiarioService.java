@@ -14,4 +14,6 @@ public interface BeneficiarioService {
     List<BeneficiarioListResponse> buscaTodosBeneficiarios();
 
     BeneficiarioDetalhadoResponse buscaBeneficiarioAtravesId(UUID idBeneficiario);
+
+    void deletaBeneficiarioAtravesId(UUID idBeneficiario);
 }
