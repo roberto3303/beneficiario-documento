@@ -21,6 +21,7 @@ public class Beneficiario {
     @Column(columnDefinition = "uuid", updatable = false, unique = true, nullable = false)
     private UUID idBeneficiario;
     @NotBlank
+    @Column(unique = true)
     private String nomeCompleto;
     @NotBlank
     private String telefone;

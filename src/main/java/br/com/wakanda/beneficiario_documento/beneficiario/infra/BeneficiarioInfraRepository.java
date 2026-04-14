@@ -5,6 +5,7 @@ import br.com.wakanda.beneficiario_documento.beneficiario.domain.Beneficiario;
 import br.com.wakanda.beneficiario_documento.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
@@ -22,7 +23,11 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
     @Override
     public Beneficiario salva(Beneficiario beneficiario) {
         log.info("[inicia] BeneficiarioInfraRepository - salva");
-        beneficiarioSpringDataJpaRepository.save(beneficiario);
+        try {
+            beneficiarioSpringDataJpaRepository.save(beneficiario);
+        } catch (DataIntegrityViolationException e) {
+            throw APIException.build(HttpStatus.NOT_FOUND,"Dados Duplicados");
+        }
         log.info("[finaliza] BeneficiarioInfraRepository - salva");
         return beneficiario;
     }
