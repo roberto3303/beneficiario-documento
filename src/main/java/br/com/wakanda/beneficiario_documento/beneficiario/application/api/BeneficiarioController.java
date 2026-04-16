@@ -53,6 +53,7 @@ public class BeneficiarioController implements BeneficiarioAPI {
     public void patchAlteraBeneficiario(UUID idBeneficiario, BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest) {
         log.info("[inicia] BeneficiarioController - patchAlteraBeneficiario");
         log.info("[idBeneficiario] {}", idBeneficiario);
+        beneficiarioService.AlteraBeneficiario(idBeneficiario, beneficiarioAlteracaoRequest);
         log.info("[finaliza] BeneficiarioController - patchAlteraBeneficiario");
     }
 

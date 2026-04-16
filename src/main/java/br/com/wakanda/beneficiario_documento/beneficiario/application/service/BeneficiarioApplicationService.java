@@ -1,9 +1,6 @@
 package br.com.wakanda.beneficiario_documento.beneficiario.application.service;
 
-import br.com.wakanda.beneficiario_documento.beneficiario.application.api.BeneficiarioDetalhadoResponse;
-import br.com.wakanda.beneficiario_documento.beneficiario.application.api.BeneficiarioListResponse;
-import br.com.wakanda.beneficiario_documento.beneficiario.application.api.BeneficiarioResponse;
-import br.com.wakanda.beneficiario_documento.beneficiario.application.api.BeneficiarioRequest;
+import br.com.wakanda.beneficiario_documento.beneficiario.application.api.*;
 import br.com.wakanda.beneficiario_documento.beneficiario.application.repository.BeneficiarioRepository;
 import br.com.wakanda.beneficiario_documento.beneficiario.domain.Beneficiario;
 import lombok.RequiredArgsConstructor;
@@ -51,5 +48,11 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
         Beneficiario beneficiario = beneficiarioRepository.buscaBeneficiarioAtravesId(idBeneficiario);
         beneficiarioRepository.deletaBeneficiario(beneficiario);
         log.info("[finaliza] BeneficiarioApplicationService - deletaBeneficiarioAtravesId");
+    }
+
+    @Override
+    public void AlteraBeneficiario(UUID idBeneficiario, BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest) {
+        log.info("[inicia] BeneficiarioApplicationService - AlteraBeneficiario");
+        log.info("[finaliza] BeneficiarioApplicationService - AlteraBeneficiario");
     }
 }
