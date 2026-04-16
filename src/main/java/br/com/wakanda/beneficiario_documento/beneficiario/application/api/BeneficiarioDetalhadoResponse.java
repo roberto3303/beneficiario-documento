@@ -18,7 +18,6 @@ public class BeneficiarioDetalhadoResponse {
     private String telefone;
     private LocalDate dataNascimento;
 
-
     private LocalDateTime dataInclusao;
 
     public BeneficiarioDetalhadoResponse(Beneficiario beneficiario) {
@@ -27,7 +26,6 @@ public class BeneficiarioDetalhadoResponse {
         this.telefone = beneficiario.getTelefone();
         this.dataNascimento = beneficiario.getDataNascimento();
         this.dataInclusao = beneficiario.getDataInclusao();
-
     }
 
 }

@@ -1,6 +1,7 @@
 package br.com.wakanda.beneficiario_documento.beneficiario.application.api;
 
 import br.com.wakanda.beneficiario_documento.beneficiario.application.service.BeneficiarioService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,4 +40,21 @@ public class BeneficiarioController implements BeneficiarioAPI {
         log.info("[finaliza] BeneficiarioController - getBeneficiarioAtravesId");
         return beneficiarioDetalhado;
     }
+
+    @Override
+    public void deletaBeneficiarioAtravesId(UUID idBeneficiario) {
+        log.info("[inicia] BeneficiarioController - deletaBeneficiarioAtravesId");
+        log.info("[idBeneficiario] {}", idBeneficiario);
+        beneficiarioService.deletaBeneficiarioAtravesId(idBeneficiario);
+        log.info("[finaliza] BeneficiarioController - deletaBeneficiarioAtravesId");
+    }
+
+    @Override
+    public void patchAlteraBeneficiario(UUID idBeneficiario, BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest) {
+        log.info("[inicia] BeneficiarioController - patchAlteraBeneficiario");
+        log.info("[idBeneficiario] {}", idBeneficiario);
+        beneficiarioService.AlteraBeneficiario(idBeneficiario, beneficiarioAlteracaoRequest);
+        log.info("[finaliza] BeneficiarioController - patchAlteraBeneficiario");
+    }
+
 }
