@@ -21,5 +21,12 @@ public class Documento {
     private LocalDateTime dataInclusao;
     private LocalDateTime dataAtualizacao;
 
-
+    public Documento(UUID idDocumento, tipoDocumento tipoDocumento, String descricao, LocalDateTime dataInclusao,
+                     LocalDateTime dataAtualizacao) {
+        this.idDocumento = idDocumento;
+        this.tipoDocumento = tipoDocumento;
+        this.descricao = descricao;
+        this.dataInclusao = dataInclusao;
+        this.dataAtualizacao = dataAtualizacao;
+    }
 }
