@@ -3,6 +3,7 @@ package br.com.wakanda.beneficiario_documento.documento.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
+import lombok.NonNull;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -15,6 +16,7 @@ public class Documento {
     @Column(columnDefinition = "uuid",name = "idDocumento", updatable = false, unique = true, nullable = false)
     private UUID idDocumento;
     @Enumerated(EnumType.STRING)
+    @NonNull
     private tipoDocumento tipoDocumento;
     @NotBlank
     private String descricao;
@@ -26,7 +28,7 @@ public class Documento {
         this.idDocumento = idDocumento;
         this.tipoDocumento = tipoDocumento;
         this.descricao = descricao;
-        this.dataInclusao = dataInclusao;
+        this.dataInclusao = LocalDateTime.now();
         this.dataAtualizacao = dataAtualizacao;
     }
 }
