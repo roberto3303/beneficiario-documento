@@ -17,6 +17,7 @@ public class Documento {
     @Column(columnDefinition = "uuid",name = "idDocumento", updatable = false, unique = true, nullable = false)
     private UUID idDocumento;
     @NonNull
+    @Column(columnDefinition = "uuid",name = "idBeneficiarioTitular", nullable = false)
     private UUID idBeneficiarioTitular;
     @Enumerated(EnumType.STRING)
     @NonNull
