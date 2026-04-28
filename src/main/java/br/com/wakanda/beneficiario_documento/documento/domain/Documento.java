@@ -1,5 +1,6 @@
 package br.com.wakanda.beneficiario_documento.documento.domain;
 
+import br.com.wakanda.beneficiario_documento.documento.application.api.DocumentoRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
@@ -15,6 +16,8 @@ public class Documento {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "uuid",name = "idDocumento", updatable = false, unique = true, nullable = false)
     private UUID idDocumento;
+    @NonNull
+    private UUID idBeneficiarioTitular;
     @Enumerated(EnumType.STRING)
     @NonNull
     private tipoDocumento tipoDocumento;
@@ -23,12 +26,12 @@ public class Documento {
     private LocalDateTime dataInclusao;
     private LocalDateTime dataAtualizacao;
 
-    public Documento(UUID idDocumento, tipoDocumento tipoDocumento, String descricao, LocalDateTime dataInclusao,
-                     LocalDateTime dataAtualizacao) {
-        this.idDocumento = idDocumento;
-        this.tipoDocumento = tipoDocumento;
-        this.descricao = descricao;
+
+    public Documento(UUID idBeneficiario, DocumentoRequest documentoRequest) {
+        this.idBeneficiarioTitular = idBeneficiario;
+        this.tipoDocumento = documentoRequest.getTipoDocumento();
+        this.descricao = documentoRequest.getDescricao();
         this.dataInclusao = LocalDateTime.now();
-        this.dataAtualizacao = dataAtualizacao;
     }
+
 }
