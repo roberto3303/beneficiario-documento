@@ -27,7 +27,8 @@ public class DocumentoInfraRepository implements DocumentoRepository {
     @Override
     public List<Documento> buscaDocumentosDoBeneficiario(UUID idBeneficiario) {
         log.info("[inicia] DocumentoInfraRepository - buscaDocumentosDoBeneficiario");
+        var documentos = documentoSpringDataJpaRepository.findByIdBeneficiarioTitular(idBeneficiario);
         log.info("[finaliza] DocumentoInfraRepository - buscaDocumentosDoBeneficiario");
-        return List.of();
+        return documentos;
     }
 }

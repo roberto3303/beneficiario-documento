@@ -1,6 +1,7 @@
 package br.com.wakanda.beneficiario_documento.documento.application.api;
 
 import br.com.wakanda.beneficiario_documento.documento.domain.tipoDocumento;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
