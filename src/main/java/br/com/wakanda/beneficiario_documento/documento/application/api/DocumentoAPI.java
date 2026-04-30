@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -16,5 +17,7 @@ public interface DocumentoAPI {
     DocumentoResponse postDocumento(@PathVariable UUID idBeneficiario,
                                     @Valid @RequestBody DocumentoRequest documentoRequest);
 
-
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    List<DocumentoListResponse> getDocumentosDoBeneficiario(@PathVariable UUID idBeneficiario);
 }
