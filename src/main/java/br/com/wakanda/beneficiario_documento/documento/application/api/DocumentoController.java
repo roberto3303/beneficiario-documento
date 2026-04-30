@@ -27,7 +27,10 @@ public class DocumentoController implements DocumentoAPI {
     @Override
     public List<DocumentoListResponse> getDocumentosDoBeneficiario(UUID idBeneficiario) {
         log.info("[inicia] DocumentoController - getDocumentosDoBeneficiario");
+        log.info("[idBeneficiario] {} ", idBeneficiario );
+        List<DocumentoListResponse> documentosDoCliente =
+                documentoService.buscaTodosDocumentosDoBeneficiario(idBeneficiario);
         log.info("[finaliza] DocumentoController - getDocumentosDoBeneficiario");
-        return List.of();
+        return documentosDoCliente;
     }
 }
