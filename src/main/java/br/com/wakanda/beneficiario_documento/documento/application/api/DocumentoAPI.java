@@ -15,4 +15,6 @@ public interface DocumentoAPI {
     @ResponseStatus(HttpStatus.CREATED)
     DocumentoResponse postDocumento(@PathVariable UUID idBeneficiario,
                                     @Valid @RequestBody DocumentoRequest documentoRequest);
+
+
 }

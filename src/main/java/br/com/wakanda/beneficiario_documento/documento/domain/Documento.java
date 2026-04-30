@@ -3,12 +3,15 @@ package br.com.wakanda.beneficiario_documento.documento.domain;
 import br.com.wakanda.beneficiario_documento.documento.application.api.DocumentoRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
 @Getter
 public class Documento {
