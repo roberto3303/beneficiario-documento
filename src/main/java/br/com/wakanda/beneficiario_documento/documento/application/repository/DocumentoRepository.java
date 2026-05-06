@@ -11,4 +11,6 @@ public interface DocumentoRepository {
     List<Documento> buscaDocumentosDoBeneficiario(UUID idBeneficiario);
 
     Documento buscaDocumentoAtravesId(UUID idDocumento);
+
+    void deletaDocumento(Documento documento);
 }
