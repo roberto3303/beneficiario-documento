@@ -43,4 +43,11 @@ public class DocumentoInfraRepository implements DocumentoRepository {
         log.info("[finaliza] DocumentoInfraRepository - buscaDocumentoAtravesId");
         return documento;
     }
+
+    @Override
+    public void deletaDocumento(Documento documento) {
+        log.info("[inicia] DocumentoInfraRepository - deletaDocumento");
+        documentoSpringDataJpaRepository.delete(documento);
+        log.info("[finaliza] DocumentoInfraRepository - deletaDocumento");
+    }
 }

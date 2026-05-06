@@ -15,4 +15,6 @@ public interface DocumentoService {
     List<DocumentoListResponse> buscaTodosDocumentosDoBeneficiario(UUID idBeneficiario);
 
     DocumentoDetalhadoResponse buscaDocumentoDoBeneficiario(UUID idBeneficiario, UUID idDocumento);
+
+    void deletaDocumentoBeneficiarioComId(UUID idBeneficiario, UUID idDocumento);
 }
