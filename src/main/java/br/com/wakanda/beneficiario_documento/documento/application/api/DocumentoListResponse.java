@@ -19,14 +19,12 @@ public class DocumentoListResponse {
     private tipoDocumento tipoDocumento;
     private String descricao;
     private LocalDateTime dataInclusao;
-    private LocalDateTime dataAtualizacao;
 
     public DocumentoListResponse(Documento documento) {
         this.idDocumento = documento.getIdDocumento();
         this.tipoDocumento = documento.getTipoDocumento();
         this.descricao = documento.getDescricao();
         this.dataInclusao = documento.getDataInclusao();
-        this.dataAtualizacao = documento.getDataAtualizacao();
     }
 
     public static List<DocumentoListResponse> converte(List<Documento> documentosDoBeneficiario) {
