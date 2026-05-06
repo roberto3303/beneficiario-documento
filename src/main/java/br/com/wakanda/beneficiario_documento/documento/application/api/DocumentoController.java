@@ -47,6 +47,7 @@ public class DocumentoController implements DocumentoAPI {
     @Override
     public void deleteDocumentoDoBeneficiario(UUID idBeneficiario, UUID idDocumento) {
         log.info("[inicia] DocumentoController - deleteDocumentoDoBeneficiario");
+        documentoService.deletaDocumentoBeneficiarioComId(idBeneficiario, idDocumento);
         log.info("[finaliza] DocumentoController - deleteDocumentoDoBeneficiario");
     }
 }
