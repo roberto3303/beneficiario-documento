@@ -25,5 +25,8 @@ public interface DocumentoAPI {
     @ResponseStatus(HttpStatus.OK)
     DocumentoDetalhadoResponse getDocumentoBeneficiarioComId(@PathVariable UUID idBeneficiario,
                                                              @PathVariable UUID idDocumento);
-
+    @DeleteMapping("/{idDocumento}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void deleteDocumentoDoBeneficiario(@PathVariable UUID idBeneficiario,
+                                       @PathVariable UUID idDocumento);
 }
