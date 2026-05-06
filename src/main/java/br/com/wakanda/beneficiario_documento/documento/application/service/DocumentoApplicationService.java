@@ -1,6 +1,8 @@
 package br.com.wakanda.beneficiario_documento.documento.application.service;
 
+import br.com.wakanda.beneficiario_documento.beneficiario.application.api.BeneficiarioDetalhadoResponse;
 import br.com.wakanda.beneficiario_documento.beneficiario.application.service.BeneficiarioService;
+import br.com.wakanda.beneficiario_documento.documento.application.api.DocumentoDetalhadoResponse;
 import br.com.wakanda.beneficiario_documento.documento.application.api.DocumentoListResponse;
 import br.com.wakanda.beneficiario_documento.documento.application.api.DocumentoRequest;
 
@@ -39,4 +41,12 @@ public class DocumentoApplicationService implements DocumentoService {
         log.info("[finaliza] DocumentoApplicationService - buscaTodosDocumentosDoBeneficiario");
         return DocumentoListResponse.converte(documentosDoBeneficiario);
     }
+
+    @Override
+    public DocumentoDetalhadoResponse buscaDocumentoDoBeneficiario(UUID idBeneficiario, UUID idDocumento) {
+        log.info("[inicia] DocumentoApplicationService - buscaDocumentoDoBeneficiario");
+        log.info("[finaliza] DocumentoApplicationService - buscaDocumentoDoBeneficiario");
+        return null;
+    }
+
 }
