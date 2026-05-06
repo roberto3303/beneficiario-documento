@@ -1,5 +1,6 @@
 package br.com.wakanda.beneficiario_documento.documento.application.api;
 
+import br.com.wakanda.beneficiario_documento.beneficiario.application.api.BeneficiarioDetalhadoResponse;
 import br.com.wakanda.beneficiario_documento.documento.application.service.DocumentoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -32,5 +33,14 @@ public class DocumentoController implements DocumentoAPI {
                 documentoService.buscaTodosDocumentosDoBeneficiario(idBeneficiario);
         log.info("[finaliza] DocumentoController - getDocumentosDoBeneficiario");
         return documentosDoCliente;
+    }
+
+    @Override
+    public DocumentoDetalhadoResponse getDocumentoBeneficiarioComId(UUID idBeneficiario, UUID idDocumento) {
+        log.info("[inicia] DocumentoController - getDocumentoBeneficiarioComId");
+        log.info("[idBeneficiario] {} [idDocumento] {}", idBeneficiario, idDocumento);
+        DocumentoDetalhadoResponse documento = documentoService.buscaDocumentoDoBeneficiario(idBeneficiario,idDocumento);
+        log.info("[finaliza] DocumentoController - getDocumentoBeneficiarioComId");
+        return documento;
     }
 }

@@ -9,4 +9,6 @@ public interface DocumentoRepository {
     Documento salvaDoc(Documento documento);
 
     List<Documento> buscaDocumentosDoBeneficiario(UUID idBeneficiario);
+
+    Documento buscaDocumentoAtravesId(UUID idDocumento);
 }

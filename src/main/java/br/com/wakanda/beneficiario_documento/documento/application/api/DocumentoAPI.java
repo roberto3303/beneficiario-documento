@@ -20,4 +20,10 @@ public interface DocumentoAPI {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     List<DocumentoListResponse> getDocumentosDoBeneficiario(@PathVariable UUID idBeneficiario);
+
+    @GetMapping("/{idDocumento}")
+    @ResponseStatus(HttpStatus.OK)
+    DocumentoDetalhadoResponse getDocumentoBeneficiarioComId(@PathVariable UUID idBeneficiario,
+                                                             @PathVariable UUID idDocumento);
+
 }
