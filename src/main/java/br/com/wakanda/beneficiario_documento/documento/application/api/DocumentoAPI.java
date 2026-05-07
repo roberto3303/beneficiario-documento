@@ -31,7 +31,7 @@ public interface DocumentoAPI {
                                        @PathVariable UUID idDocumento);
     @PatchMapping("/{idDocumento}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    DocumentoResponse patchDocumento(@PathVariable UUID idBeneficiario,
+    void patchDocumento(@PathVariable UUID idBeneficiario,
                                @PathVariable UUID idDocumento,
                                @Valid @RequestBody DocumentoAlteracaoRequest documentoAlteracaoRequest);
 }
