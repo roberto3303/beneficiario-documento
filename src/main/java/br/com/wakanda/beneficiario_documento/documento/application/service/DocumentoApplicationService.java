@@ -61,6 +61,10 @@ public class DocumentoApplicationService implements DocumentoService {
     @Override
     public void alteraDocumentoDoBeneficiario(UUID idBeneficiario, UUID idDocumento, DocumentoAlteracaoRequest documentoAlteracaoRequest) {
         log.info("[inicia] DocumentoApplicationService - alteraDocumentoDoBeneficiario");
+        beneficiarioService.buscaBeneficiarioAtravesId(idBeneficiario);
+        Documento documento = documentoRepository.buscaDocumentoAtravesId(idDocumento);
+        documento.altera(documentoAlteracaoRequest);
+        documentoRepository.salvaDoc(documento);
         log.info("[finaliza] DocumentoApplicationService - alteraDocumentoDoBeneficiario");
     }
 
