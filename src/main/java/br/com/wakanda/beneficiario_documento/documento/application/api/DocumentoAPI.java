@@ -29,4 +29,9 @@ public interface DocumentoAPI {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deleteDocumentoDoBeneficiario(@PathVariable UUID idBeneficiario,
                                        @PathVariable UUID idDocumento);
+    @PatchMapping("/{idDocumento}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void patchDocumento(@PathVariable UUID idBeneficiario,
+                               @PathVariable UUID idDocumento,
+                               @Valid @RequestBody DocumentoAlteracaoRequest documentoAlteracaoRequest);
 }

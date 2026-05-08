@@ -1,5 +1,6 @@
 package br.com.wakanda.beneficiario_documento.documento.domain;
 
+import br.com.wakanda.beneficiario_documento.documento.application.api.DocumentoAlteracaoRequest;
 import br.com.wakanda.beneficiario_documento.documento.application.api.DocumentoRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -38,5 +39,10 @@ public class Documento {
         this.dataInclusao = LocalDateTime.now();
     }
 
+    public void altera(DocumentoAlteracaoRequest documentoAlteracaoRequest) {
+        this.tipoDocumento = documentoAlteracaoRequest.getTipoDocumento();
+        this.descricao = documentoAlteracaoRequest.getDescricao();
+        this.dataAtualizacao = LocalDateTime.now();
+    }
 }
 
